@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="range.css">
+    <title>Custom Range</title>
+</head>
+<body>
+    <div class="box">
+        <div class="innerbox">
+            <div class="line"></div>
+            <input class="inputrange" type="range" min="0" max="100" value="0" />
+        </div>
+        <p class="number">0</p>
+    </div>
+    
+    <script>
+        var inputrange=document.querySelector('.inputrange');
+        inputrange.addEventListener('input', ()=>{
+            var value = inputrange.value;
+            var number = document.querySelector('.number');
+            var line = document.querySelector('.line');
+
+            number.innerHTML = value;
+            line.style.width = value + '%';
+        })
+    </script>
+</body>
+</html>
